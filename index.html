@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>bllry's site</title>
+    <title>bllry</title>
     <link rel="icon" type="image/x-icon" href="assets/images/favicon.ico">
     <style>
         * {
@@ -13,286 +13,195 @@
         }
 
         body {
-            font-family: 'Courier New', monospace;
-            background-color: #1a0d1a;
-            color: #d4b5d4;
-            line-height: 1.6;
-            padding: 20px;
-            max-width: 800px;
+            font-family: monospace;
+            background-color: #0f0a0f;
+            color: #b19bb1;
+            line-height: 1.8;
+            padding: 40px 20px;
+            max-width: 600px;
             margin: 0 auto;
-        }
-
-        header {
-            text-align: center;
-            margin-bottom: 40px;
-            padding: 20px 0;
-            border-bottom: 2px solid #4a2a4a;
+            font-size: 14px;
         }
 
         h1 {
-            color: #c299c2;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-            text-shadow: 2px 2px 0px #2d1a2d;
+            color: #d4b5d4;
+            font-size: 24px;
+            font-weight: normal;
+            margin-bottom: 40px;
+            text-align: center;
         }
 
-        .subtitle {
-            color: #9966cc;
-            font-style: italic;
-            font-size: 1.1em;
-        }
-
-        .content-section {
-            background-color: #2d1a2d;
-            margin: 30px 0;
-            padding: 25px;
-            border-radius: 8px;
-            border: 1px solid #4a2a4a;
+        .section {
+            margin-bottom: 40px;
         }
 
         h2 {
-            color: #b88bb8;
-            font-size: 1.8em;
+            color: #c299c2;
+            font-size: 16px;
+            font-weight: normal;
             margin-bottom: 15px;
-            border-bottom: 1px solid #4a2a4a;
-            padding-bottom: 5px;
         }
 
-        h3 {
-            color: #a077a0;
-            font-size: 1.4em;
-            margin-bottom: 12px;
+        p {
+            margin-bottom: 10px;
         }
 
         ul {
-            padding-left: 20px;
-            margin-bottom: 15px;
+            list-style: none;
+            padding: 0;
         }
 
         li {
-            margin-bottom: 8px;
-            color: #d4b5d4;
+            margin-bottom: 5px;
         }
 
-        .contacts {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 15px;
-            margin-top: 15px;
-        }
-
-        .contacts a, .contacts span {
-            background-color: #4a2a4a;
-            color: #e6d6e6;
-            padding: 8px 15px;
-            border-radius: 5px;
+        a {
+            color: #9966cc;
             text-decoration: none;
-            font-size: 0.9em;
-            border: 1px solid #6b3a6b;
-            transition: all 0.3s ease;
         }
 
-        .contacts a:hover {
-            background-color: #6b3a6b;
-            transform: translateY(-2px);
+        a:hover {
+            text-decoration: underline;
         }
 
-        .info {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 10px;
-            margin-top: 15px;
+        .contact-list {
+            margin-top: 10px;
         }
 
-        .info span {
-            background-color: #1a0d1a;
-            padding: 10px;
-            border-radius: 5px;
-            border: 1px solid #4a2a4a;
-            font-family: monospace;
+        .contact-list li {
+            margin-bottom: 3px;
+        }
+
+        .specs-list {
+            margin-top: 10px;
+        }
+
+        .specs-list li {
+            margin-bottom: 3px;
         }
 
         .badges {
             margin-top: 20px;
         }
 
-        .badges-title {
-            text-align: center;
-            font-size: 1.5em;
+        .badges h3 {
             color: #c299c2;
-            margin-bottom: 20px;
-            text-shadow: 1px 1px 0px #2d1a2d;
+            font-size: 16px;
+            font-weight: normal;
+            margin-bottom: 15px;
+            text-align: center;
         }
 
         .badge-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
-            gap: 10px;
-            justify-items: center;
-        }
-
-        .badge-link {
-            display: block;
-            transition: transform 0.2s ease;
-            border-radius: 3px;
-            overflow: hidden;
-        }
-
-        .badge-link:hover {
-            transform: scale(1.05);
-            box-shadow: 0 0 10px rgba(153, 102, 204, 0.5);
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
         }
 
         .badge-img {
             width: 88px;
             height: 31px;
             image-rendering: pixelated;
-            border: 1px solid #4a2a4a;
+            opacity: 0.8;
+            transition: opacity 0.2s ease;
         }
 
-        .blog-section {
+        .badge-img:hover {
+            opacity: 1;
+        }
+
+        .footer {
             text-align: center;
-            margin: 30px 0;
+            margin-top: 60px;
+            color: #7a5f7a;
+            font-size: 12px;
         }
 
-        .blog-posts {
-            list-style: none;
-            padding: 0;
-        }
-
-        .blog-posts li {
-            margin: 10px 0;
-            padding: 10px;
-            background-color: #2d1a2d;
-            border-radius: 5px;
-            border-left: 4px solid #9966cc;
-        }
-
-        footer {
-            text-align: center;
-            margin-top: 50px;
-            padding: 20px 0;
-            border-top: 1px solid #4a2a4a;
-            color: #9966cc;
-            font-size: 0.9em;
-        }
-
-        @media (max-width: 600px) {
+        @media (max-width: 480px) {
             body {
-                padding: 15px;
-            }
-            
-            h1 {
-                font-size: 2em;
-            }
-            
-            .contacts {
-                flex-direction: column;
-            }
-            
-            .info {
-                grid-template-columns: 1fr;
+                padding: 30px 15px;
+                font-size: 13px;
             }
             
             .badge-grid {
-                grid-template-columns: repeat(auto-fit, minmax(80px, 1fr));
+                gap: 6px;
             }
         }
     </style>
 </head>
 <body>
-    <header>
-        <h1>bllry's site</h1>
-        <p class="subtitle">a small, purple website</p>
-    </header>
+    <h1>bllry</h1>
 
-    <main>
-        <section class="content-section">
-            <h2>about</h2>
-            <p>yo! i'm bllry and this is my small website.</p>
-            <p>below are some things you should know about me and some things that i support</p>
-            <ul>
-                <li>i am currently 18 years old</li>
-                <li>i know java, rust, and python</li>
-                <li>i support the right to repair</li>
-            </ul>
-        </section>
+    <div class="section">
+        <h2>about</h2>
+        <p>18 years old</p>
+        <p>java, rust, python</p>
+        <p>supports right to repair</p>
+    </div>
 
-        <section class="content-section">
-            <h2>contact</h2>
-            <div class="contacts">
-                <a href="https://github.com/bllryy" target="_blank">github</a>
-                <a href="#" target="_blank">mastodon</a>
-                <span>discord: bllryyy</span>
-                <span>signal: bllry.89</span>
-            </div>
-        </section>
+    <div class="section">
+        <h2>contact</h2>
+        <ul class="contact-list">
+            <li><a href="https://github.com/bllryy">github</a></li>
+            <li>mastodon</li>
+            <li>discord: bllryyy</li>
+            <li>signal: bllry.89</li>
+        </ul>
+    </div>
 
-        <section class="content-section">
-            <h2>pc specs</h2>
-            <div class="info">
-                <span>os: arch</span>
-                <span>wm: kde</span>
-                <span>ram: 32gb</span>
-                <span>cpu: ryzen 5 3600</span>
-                <span>gpu: amd rx 6600 xt</span>
-            </div>
-        </section>
+    <div class="section">
+        <h2>setup</h2>
+        <ul class="specs-list">
+            <li>NixOS</li>
+            <li>kde plasma</li>
+            <li>32gb ram</li>
+            <li>i7</li>
+            <li>Nvidia GTX 1660</li>
+        </ul>
+    </div>
 
-        <section class="content-section badges">
-            <div class="badges-title">☆ badges ☆</div>
-            <div class="badge-grid">
-                <a href="https://archlinux.org" class="badge-link" title="archlinux btw">
-                    <img src="assets/88x31/archlinux.gif" alt="Arch Linux" class="badge-img">
-                </a>
-                <a href="https://torproject.org" class="badge-link" title="the onion router">
-                    <img src="assets/88x31/tor.gif" alt="Tor Project" class="badge-img">
-                </a>
-                <a href="https://libreboot.org" class="badge-link" title="libreboot">
-                    <img src="assets/88x31/libreboot.gif" alt="Libreboot" class="badge-img">
-                </a>
-                <a href="https://firefox.com" class="badge-link" title="firefox now">
-                    <img src="assets/88x31/firefoxnow.gif" alt="Firefox" class="badge-img">
-                </a>
-                <a href="https://archive.org" class="badge-link" title="internet archive">
-                    <img src="assets/88x31/internetarchive.gif" alt="Internet Archive" class="badge-img">
-                </a>
-                <a href="https://mastodon.social" class="badge-link" title="join mastodon">
-                    <img src="assets/88x31/neo-fedi.gif" alt="Mastodon" class="badge-img">
-                </a>
-                <span class="badge-link" title="hate microsoft">
-                    <img src="assets/88x31/hatems.gif" alt="Anti-Microsoft" class="badge-img">
-                </span>
-                <span class="badge-link" title="piracy now">
-                    <img src="assets/88x31/piracy.png" alt="Piracy Now" class="badge-img">
-                </span>
-                <span class="badge-link" title="the skeleton appears">
-                    <img src="assets/88x31/fireskull.jpeg" alt="Fire Skull" class="badge-img">
-                </span>
-                <span class="badge-link" title="trans rights now">
-                    <img src="assets/88x31/trans_rights_now.png" alt="Trans Rights" class="badge-img">
-                </span>
-                <a href="https://ublockorigin.com" class="badge-link" title="ublock origin">
-                    <img src="assets/88x31/ublock.png" alt="uBlock Origin" class="badge-img">
-                </a>
-                <a href="https://gnu.org" class="badge-link" title="free software">
-                    <img src="assets/88x31/gnu.png" alt="GNU" class="badge-img">
-                </a>
-                <a href="https://spyware.neocities.org/articles/discord" class="badge-link" title="discord no way">
-                    <img src="assets/88x31/discord-no-way-2.gif" alt="Anti-Discord" class="badge-img">
-                </a>
-                <span class="badge-link" title="gay anime">
-                    <img src="assets/88x31/gay_anime.jpg" alt="Gay Anime" class="badge-img">
-                </span>
-                <span class="badge-link" title="gay">
-                    <img src="assets/88x31/gay.jpg" alt="Gay Pride" class="badge-img">
-                </span>
-            </div>
-        </section>
-    </main>
+    <div class="section badges">
+        <h3>badges</h3>
+        <div class="badge-grid">
+            <a href="https://archlinux.org">
+                <img src="assets/88x31/archlinux.gif" alt="arch" class="badge-img">
+            </a>
+            <a href="https://torproject.org">
+                <img src="assets/88x31/tor.gif" alt="tor" class="badge-img">
+            </a>
+            <a href="https://libreboot.org">
+                <img src="assets/88x31/libreboot.gif" alt="libreboot" class="badge-img">
+            </a>
+            <a href="https://firefox.com">
+                <img src="assets/88x31/firefoxnow.gif" alt="firefox" class="badge-img">
+            </a>
+            <a href="https://archive.org">
+                <img src="assets/88x31/internetarchive.gif" alt="archive" class="badge-img">
+            </a>
+            <a href="https://mastodon.social">
+                <img src="assets/88x31/neo-fedi.gif" alt="fedi" class="badge-img">
+            </a>
+            <img src="assets/88x31/hatems.gif" alt="no ms" class="badge-img">
+            <img src="assets/88x31/piracy.png" alt="piracy" class="badge-img">
+            <img src="assets/88x31/fireskull.jpeg" alt="skull" class="badge-img">
+            <img src="assets/88x31/trans_rights_now.png" alt="trans rights" class="badge-img">
+            <a href="https://ublockorigin.com">
+                <img src="assets/88x31/ublock.png" alt="ublock" class="badge-img">
+            </a>
+            <a href="https://gnu.org">
+                <img src="assets/88x31/gnu.png" alt="gnu" class="badge-img">
+            </a>
+            <a href="https://spyware.neocities.org/articles/discord">
+                <img src="assets/88x31/discord-no-way-2.gif" alt="no discord" class="badge-img">
+            </a>
+            <img src="assets/88x31/gay_anime.jpg" alt="gay anime" class="badge-img">
+            <img src="assets/88x31/gay.jpg" alt="gay" class="badge-img">
+        </div>
+    </div>
 
-    <footer>
-        <p>made with 💜 by bllry</p>
-    </footer>
+    <div class="footer">
+        Made by Lily
+    </div>
 </body>
 </html>
